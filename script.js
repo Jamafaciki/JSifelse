@@ -1,4 +1,5 @@
 let gameRun = false;
+let hepler;
 let minValue = parseInt(document.getElementById('minvalue').value);
     if(isNaN(minValue) || minValue == undefined){
     minValue = 0;
@@ -7,6 +8,12 @@ let minValue = parseInt(document.getElementById('minvalue').value);
 let maxValue = parseInt(document.getElementById('maxvalue').value);
     if(isNaN(maxValue) || minValue == undefined){
     maxValue = 100;
+    }
+
+    if(minValue > maxValue){
+        hepler = minValue;
+        minValue = maxValue;
+        maxValue = hepler;
     }
 
 let answerNumber = Math.floor((minValue + maxValue) / 2);
@@ -31,6 +38,12 @@ document.getElementById('btnRetry').addEventListener('click', function () {
     if(isNaN(maxValue) || minValue == undefined){
         //alert('Введёное число совсем не число! Мне придётся присвоить 100');
         maxValue = 100;
+    }
+
+    if(minValue > maxValue){
+        hepler = minValue;
+        minValue = maxValue;
+        maxValue = hepler;
     }
 
     minValue >= 998 ? minValue = 998 : minValue <= -999 ? minValue = -999 : minValue = minValue;
@@ -787,6 +800,12 @@ minValue = parseInt(document.getElementById('minvalue').value);
 maxValue = parseInt(document.getElementById('maxvalue').value);
     if(isNaN(maxValue) || minValue == undefined){
     maxValue = 100;
+    }
+    
+    if(minValue > maxValue){
+        hepler = minValue;
+        minValue = maxValue;
+        maxValue = hepler;
     }
 
     minValue >= 998 ? minValue = 998 : minValue <= -999 ? minValue = -999 : minValue = minValue;
