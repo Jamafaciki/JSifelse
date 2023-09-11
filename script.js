@@ -24,7 +24,6 @@ let answerNumberinfo = answerNumber;
 const orderNumberField = document.getElementById('orderNumberField');
 const answerField = document.getElementById('answerField');
 
-
 document.getElementById('btnRetry').addEventListener('click', function () {
     //location.reload();
     minValue = parseInt(document.getElementById('minvalue').value);
@@ -801,7 +800,7 @@ maxValue = parseInt(document.getElementById('maxvalue').value);
     if(isNaN(maxValue) || minValue == undefined){
     maxValue = 100;
     }
-    
+
     if(minValue > maxValue){
         hepler = minValue;
         minValue = maxValue;
