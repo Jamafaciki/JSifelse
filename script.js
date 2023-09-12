@@ -60,7 +60,7 @@ document.getElementById('btnRetry').addEventListener('click', function () {
         answerNumberinfo = -answerNumberinfo;
                 }
 
-        switch(Math.floor(answerNumberinfo/100)){
+        switch(Math.trunc(answerNumberinfo/100)){
         case 1:
             answerText += 'сто';
             answerNumberinfo -= 100;
@@ -98,7 +98,7 @@ document.getElementById('btnRetry').addEventListener('click', function () {
             answerNumberinfo -= 900;
             break;
                 }
-        switch(Math.floor(answerNumberinfo/10)){
+        switch(Math.trunc(answerNumberinfo/10)){
                 case 1:
                     if(answerNumberinfo <= 19 && answerNumberinfo >= 10){
                         switch(answerNumberinfo % 10){
@@ -272,7 +272,7 @@ const phraseRandom = Math.round( Math.random() * 4);
 
 document.getElementById('btnOver').addEventListener('click', function () {
     if (gameRun){
-        if (minValue === maxValue){
+        if (minValue === maxValue || answerNumber == maxValue){
             const phraseRandom = Math.round( Math.random() * 4);
                 switch(phraseRandom) {
                     case 1:
@@ -304,7 +304,7 @@ document.getElementById('btnOver').addEventListener('click', function () {
                 answerNumberinfo = -answerNumberinfo;
                         }
 
-            switch(Math.floor(answerNumberinfo/100)){
+            switch(Math.trunc(answerNumberinfo/100)){
                 case 1:
                     answerText += 'сто';
                     answerNumberinfo -= 100;
@@ -342,7 +342,7 @@ document.getElementById('btnOver').addEventListener('click', function () {
                     answerNumberinfo -= 900;
                     break;
                         }
-            switch(Math.floor(answerNumberinfo/10)){
+            switch(Math.trunc(answerNumberinfo/10)){
                         case 1:
                             if(answerNumberinfo <= 19 && answerNumberinfo >= 10){
                                 switch(answerNumberinfo % 10){
@@ -518,7 +518,7 @@ document.getElementById('btnOver').addEventListener('click', function () {
 
 document.getElementById('btnLess').addEventListener('click', function () {
     if (gameRun){
-        if (minValue === maxValue ){
+        if (minValue === maxValue || answerNumber === minValue){
             const phraseRandom = Math.round( Math.random() * 4);
             switch(phraseRandom) {
                 case 1:
@@ -540,6 +540,7 @@ document.getElementById('btnLess').addEventListener('click', function () {
             gameRun = false;
         } else {
         maxValue = answerNumber - 1;
+
         answerNumber  = Math.floor((maxValue + minValue) / 2);
         answerNumberinfo = answerNumber;
         orderNumber++;
@@ -551,7 +552,7 @@ document.getElementById('btnLess').addEventListener('click', function () {
                 answerNumberinfo = -answerNumberinfo;
                         }
 
-            switch(Math.floor(answerNumberinfo/100)){
+            switch(Math.trunc(answerNumberinfo/100)){
                 case 1:
                     answerText += 'сто';
                     answerNumberinfo -= 100;
@@ -589,7 +590,7 @@ document.getElementById('btnLess').addEventListener('click', function () {
                     answerNumberinfo -= 900;
                     break;
                         }
-            switch(Math.floor(answerNumberinfo/10)){
+            switch(Math.trunc(answerNumberinfo/10)){
                         case 1:
                             if(answerNumberinfo <= 19 && answerNumberinfo >= 10){
                                 switch(answerNumberinfo % 10){
@@ -741,7 +742,6 @@ document.getElementById('btnLess').addEventListener('click', function () {
             if(answerText.length > 20){
                 answerText = answerNumber;
                         } 
-
             const phraseRandom = Math.round( Math.random() * 4);
             switch(phraseRandom) {
                             case 1:
@@ -761,7 +761,6 @@ document.getElementById('btnLess').addEventListener('click', function () {
                         }     
                }   
             } 
-
         })
 
 document.getElementById('btnEqual').addEventListener('click', function () {
@@ -822,7 +821,7 @@ maxValue = parseInt(document.getElementById('maxvalue').value);
         answerNumberinfo = -answerNumberinfo;
       }
 
-        switch(Math.floor(answerNumberinfo/100)){
+        switch(Math.trunc(answerNumberinfo/100)){
         case 1:
             answerText += 'сто';
             answerNumberinfo -= 100;
@@ -860,7 +859,7 @@ maxValue = parseInt(document.getElementById('maxvalue').value);
             answerNumberinfo -= 900;
             break;
                 }
-        switch(Math.floor(answerNumberinfo/10)){
+        switch(Math.trunc(answerNumberinfo/10)){
                 case 1:
                     if(answerNumberinfo <= 19 && answerNumberinfo >= 10){
                         switch(answerNumberinfo % 10){
